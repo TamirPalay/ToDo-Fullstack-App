@@ -1,5 +1,4 @@
 function validateForm()  {
-
     // Initialize an array to store error messages
     const errors = [];
 
@@ -8,6 +7,7 @@ function validateForm()  {
      *          If there is an error the push the message "Error handling form fields!" and
      *          return false.
      **/
+     try{
         // Get form fields
         const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
@@ -51,7 +51,11 @@ function validateForm()  {
         if (hobbies.length === 0) {
             errors.push("Please select at least one hobby.");
         }
-
+} catch(error){
+errors.push("Error handling form fields!");
+displayClientErrors(errors);
+return false;
+}
         // Display errors if any exist
         if (errors.length > 0) {
             displayClientErrors(errors);
