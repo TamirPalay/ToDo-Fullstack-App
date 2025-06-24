@@ -34,7 +34,7 @@ public class TaskController {
                         using the method "addAttribute".
          **/
 
-
+        model.addAttribute("todaysTasks",todayTasks);
         // Fetch all tasks for the current user, sorted by due date
         List<Task> allTasks = taskService.getAllTasksForCurrentUser();
         sortTasksByDueDate(allTasks);
@@ -91,7 +91,7 @@ public class TaskController {
     public String saveTask(@ModelAttribute("task") Task task, Model model, RedirectAttributes redirectAttributes) {
         try {
             /** TODO 11: call the "saveTask" method of the "taskService" to save the task object passed **/
-
+            taskService.saveTask(task);
             redirectAttributes.addFlashAttribute("successMessage", "Task added successfully!");
             return "redirect:/dashboard";
         } catch (Exception e) {

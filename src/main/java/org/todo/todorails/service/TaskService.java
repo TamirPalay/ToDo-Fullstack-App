@@ -66,7 +66,7 @@ public class TaskService {
          *            user object, currentDate object and status of completed status of false.
          *            assign the value returned to the array list taskListForToday.
           **/
-
+        taskListForToday=taskRepository.findByUserAndDueDateAndCompleted(user,currentDate,false);
 
         //return the task list
         return taskListForToday;
