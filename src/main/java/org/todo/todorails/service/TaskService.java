@@ -105,7 +105,7 @@ public class TaskService {
 
         if (task != null && !task.isCompleted()) {
             /** TODO 16: set the task completion status to of the "task" object to true **/
-
+            task.setCompleted(true);
             task.setCompletionDate(LocalDate.now());
             taskRepository.save(task);
             return true;
@@ -239,7 +239,7 @@ public class TaskService {
          *                tasks based on the completion status from the TaskRespository
          *               which you created in TODO 20 (a)
           **/
-        return 0;
+        return taskRepository.countByCompleted(completedStatus);
 
     }
 }

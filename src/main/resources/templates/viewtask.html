@@ -57,8 +57,10 @@
                             or "task-status.pending" is applied using the "th:class"
                             along with the ternary operator on "task.completed"
                            -->
-                <span ></span>
-                
+                <span th:text="${task.completed ? 'Yes' : 'No'}"
+                      th:class="${task.completed ? 'task-status completed' : 'task-status pending'}"></span>
+
+
             </p>
 
             <p><strong>Completion Date:</strong> <span th:text="${task.completionDate != null ? task.completionDate : 'NA'}"></span></p>
