@@ -30,6 +30,7 @@ public class SecurityConfig {
                         /** TODO 1:  allow access to static resource "/css/**" and
                          *           "/register" without logging in
                          */
+                        .requestMatchers("/css/**", "/register").permitAll()
                         // allow access to static resources
                         .requestMatchers("/js/**", "/images/**").permitAll()
                         // allow access to register, login, terms and index without logging in
