@@ -9,3 +9,5 @@ Download the files and run ToDoRailsApplication.java
 Then proceed to http://localhost:8080/dashboard
 
 You can then register a new account and access the app.
+
+The concept of this app is not that advanced. It was just a personal project to test my knowledge on front end and backend development. The front end uses thymeleaf and the backend uses springboot. Obviously, my html,css,javascript,java and api knowledge was put to the test as well!
